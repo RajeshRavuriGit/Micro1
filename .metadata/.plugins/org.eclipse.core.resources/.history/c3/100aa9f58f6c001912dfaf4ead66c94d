@@ -1,0 +1,10 @@
+server.port=8085
+spring.application.name=ZuulTester
+eureka.client.serviceUrl.defaultZone  = http://localhost:8761/eureka
+#management.security.endpoints.web.exposure.include=info, health, routes
+management.endpoints.web.exposure.include=routes,filters
+
+#zuul.routes.client11.path=/client11/**
+ #zuul.routes.client11.strip-prefix=false  
+  zuul.ignored-patterns= /**/** 
+  #ignoredPatterns: /**/admin/** 

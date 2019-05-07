@@ -1,0 +1,29 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Test {
+
+	public static void main(String[] args) {
+        String str1 = "topjavatutorial";
+        System.out.println(removeDuplicateChars(str1));
+        String str2 = "hello";
+        System.out.println(removeDuplicateChars(str2));
+    }
+ 
+    private static String removeDuplicateChars(String sourceStr) {
+        // Store encountered letters in this string.
+        char[] chrArray = sourceStr.toCharArray();
+        String targetStr = "";
+ 
+        // Loop over each character.
+        for (char value : chrArray) {
+            // See if character is in the target
+            if (targetStr.indexOf(value) == -1) {
+                targetStr += value; // Use StringBuilder as shown below
+            }
+        }
+        return targetStr;
+    }
+	
+	
+}

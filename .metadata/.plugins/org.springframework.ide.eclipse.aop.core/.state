@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="Client1"/>
+<aop-project name="Client2"/>
+<aop-project name="FrontEnd"/>
+<aop-project name="Client11"/>
+<aop-project name="ZuulTest"/>
+<aop-project name="EurekaServer"/>
+</aop-reference-model>

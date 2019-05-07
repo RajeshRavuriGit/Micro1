@@ -1,0 +1,4 @@
+server.port=8085
+spring.application.name=ZuulTester
+
+management.security.endpoints.web.exposure.include=info, health, routes

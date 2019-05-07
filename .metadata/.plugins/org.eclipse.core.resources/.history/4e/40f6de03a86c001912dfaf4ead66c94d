@@ -1,0 +1,24 @@
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Test {
+
+	public static void main(String[] args) {
+        String str1 = "topjavatutorial";
+       
+ 
+   
+    	StringBuilder sb = new StringBuilder();
+        char[] arr = str1.toCharArray();
+     
+        for (char ch : arr) {
+            if (sb.indexOf(String.valueOf(ch)) != -1)
+                continue;
+            else
+                sb.append(ch);
+        }
+       
+    System.out.println("String---"+sb.toString());
+	}
+	
+}
