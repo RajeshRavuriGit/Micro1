@@ -74,9 +74,17 @@ public @ResponseBody Map<Integer,Movies> addRating(@RequestParam("mid") int mid,
 @RequestMapping("configclient1")
 public @ResponseBody String configclient() {
 	
+	//Map<String, String> mm=properties.getMyMap();
+	    
 	
 	StringBuilder sb=new StringBuilder();
-	sb.append(properties.getProperty());
+	
+	   
+		//for (Map.Entry<String, String> entry : mm.entrySet()) {
+			sb.append(properties.getProperty());
+					
+			//sb.append(entry.getValue());
+	//	}
 	sb.append("||");
 	sb.append(someOtherProperty);
 	return sb.toString();
