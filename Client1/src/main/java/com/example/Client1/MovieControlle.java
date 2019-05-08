@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +18,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/")
 public class MovieControlle {
 
-
+    @Autowired
+	private TestConfig properties;
+    @Value("${some.other.property}")
+    private String someOtherProperty;
 	Map<Integer,Movies>  movies=new HashMap();
 	
 	MovieControlle(){
@@ -63,4 +69,17 @@ public @ResponseBody Map<Integer,Movies> addRating(@RequestParam("mid") int mid,
 	return movies;
 	
 }
+
+
+@RequestMapping("configclient1")
+public @ResponseBody String configclient() {
+	
+	
+	StringBuilder sb=new StringBuilder();
+	sb.append(properties.getProperty());
+	sb.append("||");
+	sb.append(someOtherProperty);
+	return sb.toString();
+}
+
 }
